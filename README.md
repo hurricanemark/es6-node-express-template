@@ -130,3 +130,11 @@ You can test it by running this command
 npm run transpile
 
 You’ll see a new folder pop up.
+
+
+
+==================================
+github:
+git remote add origin https://github.com/hurricanemark/es6-node-express-template.git
+git branch -M main
+git push -u origin main
