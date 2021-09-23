@@ -4,23 +4,23 @@ Reference: [https://www.freecodecamp.org/news/how-to-enable-es6-and-beyond-synta
 
 ## 1. Project Setup
 
-npx express-generator your-project-name --no-view
+`npx express-generator your-project-name --no-view`
 
-cd your-project-name
+`cd your-project-name`
 
 ## 2. Installing Packages and Moving and Deleting Files
 
-npm install
+`npm install`
 
-npm install -g win-node-env //for windows IDE
+`npm install -g win-node-env` //for windows IDE
 
-create a server/ folder
+>create a server/ folder
 
-Put bin/ , app.js , and routes/ inside the server/ folder.
+>Put bin/ , app.js , and routes/ inside the server/ folder.
 
-Rename www, found in bin to www.js
+>Rename www, found in bin to www.js
 
-Leave public/ folder at your project root.
+>Leave public/ folder at your project root.
 
 ### Converting to ES6 code
 
