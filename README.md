@@ -30,6 +30,7 @@ Code for bin/www.js:
 
 Now, because we modified the file structure, our start server script won&#39;t work. Here&#39;s what we&#39;ll do to fix it. On your package.json file, rename start script to server found in a JSON Object called &quot;scripts&quot;
 
+```
 // package.json
 
 {
@@ -45,6 +46,7 @@ Now, because we modified the file structure, our start server script won&#39;t w
 }
 
 }
+```
 
 Try it! Try running the server by typing npm run server on your terminal, and go to localhost:3000 on your browser.
 
@@ -54,6 +56,7 @@ Converting the generated code to ES6 is a little bit tedious, so just post the c
 
 Code for bin/www.js:
 
+```
 // bin/www.js
 
 /\*\*
@@ -71,6 +74,7 @@ import http from &#39;http&#39;;
 const debug = debugLib(&#39;your-project-name:server&#39;);
 
 // ..generated code below.
+```
 
 Almost all of our modifications are only at the top and bottom of the files. We are leaving other generated code as is.
 
@@ -78,6 +82,7 @@ Code for routes/index.js and routes/users.js:
 
 // routes/index.js and users.js
 
+```
 import express from &#39;express&#39;;
 
 var router = express.Router();
@@ -85,9 +90,11 @@ var router = express.Router();
 // ..stuff below
 
 export default router;
+```
 
 Code for app.js:
 
+```
 // app.js
 
 import express from &#39;express&#39;;
@@ -119,6 +126,7 @@ app.use(&#39;/&#39;, indexRouter);
 app.use(&#39;/users&#39;, usersRouter);
 
 export default app;
+```
 
 In app.js , because we left public/ at the project root , we need to change the Express static path one folder up. Notice that the path &#39;public&#39; became &#39;../public&#39; .
 
@@ -132,7 +140,7 @@ Install `npm-run-all`
 
 Since some terminal commands won�t work on windows cmd, we need to install a package called npm-run-all so this script will work for any environment. Run this command in your terminal project root.
 
-npm install --save npm-run-all
+`npm install --save npm-run-all`
 
 ## 5. Install babel, nodemon, and rimraf
 
@@ -140,7 +148,7 @@ Babel is modern JavaScript transpiler. A transpiler means your modern JavaScript
 
 Note that Nodemon is our file watcher and Rimraf is our file remover packages.
 
-npm install --save @babel/core @babel/cli @babel/preset-env nodemon rimraf
+`npm install --save @babel/core @babel/cli @babel/preset-env nodemon rimraf`
 
 Adding transpile script
 
@@ -148,6 +156,7 @@ Before babel starts converting code, we need to tell it which parts of the code 
 
 Inside your package.json file, create a &quot;babel&quot; object and put this setting.
 
+```
 // package.json
 
 {
@@ -161,9 +170,11 @@ Inside your package.json file, create a &quot;babel&quot; object and put this se
 },
 
 }
+```
 
 After this setup we are now ready to test if babel really converts code. Add a script named transpile in your package.json:
 
+```
 // package.json
 
 &quot;scripts&quot;: {
@@ -173,12 +184,13 @@ After this setup we are now ready to test if babel really converts code. Add a s
 &quot;transpile&quot;: &quot;babel ./server --out-dir dist-server&quot;,
 
 }
+```
 
 Now what happened here? First we need to run the cli command babel , specify the files to convert, in this case, the files in server/ and put the transpiled contents in a different folder called dist-server in our project root.
 
 You can test it by running this command
 
-npm run transpile
+`npm run transpile`
 
 You&#39;ll see a new folder pop up.
 
