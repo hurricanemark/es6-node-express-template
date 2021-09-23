@@ -11,17 +11,18 @@ cd your-project-name
 ====================================================
 npm install
 
+npm install -g win-node-env   //for windows IDE
 	create a server/ folder
 	Put bin/ , app.js , and routes/ inside the server/ folder.
 	Rename www, found in bin to www.js
 	Leave public/ folder at your project root.
 
 Converting to ES6 code
-Converting the generated code to ES6 is a little bit tedious, so I’ll just post the code here and feel free to copy and paste it.
+Converting the generated code to ES6 is a little bit tedious, so Iï¿½ll just post the code here and feel free to copy and paste it.
 
 Code for bin/www.js:
 
-Now, because we modified the file structure, our start server script won’t work. Here’s what we’ll do to fix it. On your package.json file, rename start script to serverfound in a JSON Object called "scripts"
+Now, because we modified the file structure, our start server script wonï¿½t work. Hereï¿½s what weï¿½ll do to fix it. On your package.json file, rename start script to serverfound in a JSON Object called "scripts"
 
 // package.json
 {
@@ -36,7 +37,7 @@ Try it! Try running the server by typing npm run server on your terminal, and go
 
 3.  Converting the top level code to use ES6 imports
 ====================================================
-Converting the generated code to ES6 is a little bit tedious, so I’ll just post the code here and feel free to copy and paste it.
+Converting the generated code to ES6 is a little bit tedious, so Iï¿½ll just post the code here and feel free to copy and paste it.
 
 Code for bin/www.js:
 
@@ -89,10 +90,10 @@ app.use(express.static(path.join(__dirname, '../public')));
 
 4. Setting up Scripts
 =====================
-In setting up scripts, each script performs a different role. And we reuse each npm script. And for our development and production environments, they have a different configuration. (Almost identical, you’ll see later) That’s why we need to compose our scripts so we can use them without repeatedly typing the same stuff all over again.
+In setting up scripts, each script performs a different role. And we reuse each npm script. And for our development and production environments, they have a different configuration. (Almost identical, youï¿½ll see later) Thatï¿½s why we need to compose our scripts so we can use them without repeatedly typing the same stuff all over again.
 
 Install `npm-run-all`
-Since some terminal commands won’t work on windows cmd, we need to install a package called npm-run-all so this script will work for any environment. Run this command in your terminal project root.
+Since some terminal commands wonï¿½t work on windows cmd, we need to install a package called npm-run-all so this script will work for any environment. Run this command in your terminal project root.
 
 npm install --save npm-run-all
 
@@ -105,7 +106,7 @@ Note that Nodemon is our file watcher and Rimraf is our file remover packages.
 npm install --save @babel/core @babel/cli @babel/preset-env nodemon rimraf
 
 Adding transpile script
-Before babel starts converting code, we need to tell it which parts of the code to translate. Note that there are a lots of configuration available, because babel can convert a lot of JS Syntaxes for every different kinds of purpose. Luckily we don’t need to think about that because there’s an available default for that. We are using default config called as preset-env (the one we installed earlier) in our package.json file to tell Babel in which format we are transpiling the code.
+Before babel starts converting code, we need to tell it which parts of the code to translate. Note that there are a lots of configuration available, because babel can convert a lot of JS Syntaxes for every different kinds of purpose. Luckily we donï¿½t need to think about that because thereï¿½s an available default for that. We are using default config called as preset-env (the one we installed earlier) in our package.json file to tell Babel in which format we are transpiling the code.
 
 Inside your package.json file, create a "babel" object and put this setting.
 
@@ -129,7 +130,7 @@ You can test it by running this command
 
 npm run transpile
 
-You’ll see a new folder pop up.
+Youï¿½ll see a new folder pop up.
 
 
 
