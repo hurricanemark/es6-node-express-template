@@ -2,6 +2,7 @@
   "name": "maremi",
   "version": "0.0.0",
   "private": true,
+  "requires": true,
   "scripts": {
     "startme": "node ./server/bin/www",
     "start": "npm run prod",
